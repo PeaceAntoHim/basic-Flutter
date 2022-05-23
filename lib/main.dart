@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(myApp());
+void main() => runApp(MyApp());
 
-class myApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  // ignore: library_private_types_in_public_api
+  _MyAppState createState() => _MyAppState();
+}
+
+// ignore: must_be_immutable
+class _MyAppState extends StatelessWidget {
+  List<Widget> widgets = [];
+
+// This to made constructor of data
+  _MyAppState() {
+    for (int i = 0; i < 15; i++) {
+      widgets.add(Text("Data ke-$i"));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,19 +26,8 @@ class myApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Flutter Demo'),
           ),
-          body: const Center(
-            child: Text(
-              "This is a text",
-              style: TextStyle(
-                  fontFamily: "Macondo-Regular",
-                  fontSize: 30,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.overline,
-                  decorationColor: Colors.red,
-                  decorationThickness: 5,
-                  decorationStyle: TextDecorationStyle.wavy),
-            ),
+          body: Column(
+            children: widgets,
           )),
     );
   }
