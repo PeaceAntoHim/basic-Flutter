@@ -17,7 +17,11 @@ class myApp extends StatelessWidget {
                   fontFamily: "Macondo-Regular",
                   fontSize: 30,
                   fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.bold),
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.overline,
+                  decorationColor: Colors.red,
+                  decorationThickness: 5,
+                  decorationStyle: TextDecorationStyle.wavy),
             ),
           )),
     );
