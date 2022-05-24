@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,18 +15,7 @@ class MyApp extends StatefulWidget {
 // ignore: must_be_immutable
 class _MyAppState extends State<MyApp> {
   List<Widget> widgets = [];
-
-// This to made constructor of data
-  _MyAppState() {
-    for (int i = 0; i < 15; i++) {
-      widgets.add(
-        Text(
-          "Data ke-$i",
-          style: const TextStyle(fontSize: 25),
-        ),
-      );
-    }
-  }
+  int counter = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +25,40 @@ class _MyAppState extends State<MyApp> {
             title: const Text('Flutter Demo'),
           ),
           body: Column(
-            children: widgets,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  RaisedButton(
+                    child: const Text('Add'),
+                    onPressed: () {
+                      setState(() {
+                        widgets.add(
+                          Text(
+                            'Data ke-$counter',
+                            style: const TextStyle(fontSize: 20),
+                          ),
+                        );
+                        counter++;
+                      });
+                    },
+                  ),
+                  RaisedButton(
+                    child: const Text('Remove'),
+                    onPressed: () {
+                      setState(() {
+                        widgets.removeLast();
+                        counter--;
+                      });
+                    },
+                  ),
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: widgets,
+              ),
+            ],
           )),
     );
   }
