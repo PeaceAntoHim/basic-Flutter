@@ -10,124 +10,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Excercise Stack and align"),
+          title: const Text("Excercise Image"),
         ),
-        body: Stack(
-          children: <Widget>[
-            // background
-            Column(
-              children: <Widget>[
-                Flexible(
-                  flex: 1,
-                  child: Row(
-                    children: <Widget>[
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Container(
-                          color: Colors.black12,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: Row(
-                    children: <Widget>[
-                      Flexible(
-                        flex: 1,
-                        child: Container(color: Colors.black12),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Container(color: Colors.white),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+        body: Center(
+          child: Container(
+            color: Colors.black,
+            width: 200,
+            height: 200,
+            padding: const EdgeInsets.all(3),
+            // User internet image
+            child: Image.network(
+              "https://picsum.photos/200/300",
+              fit: BoxFit.cover,
             ),
-            // listview with text
-            ListView(
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      child: const Text(
-                        "This is text, has on layer center from stack",
-                        style: TextStyle(fontSize: 30),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            // buttton in the center of bottom
-            Align(
-              alignment: const Alignment(0, 0.9),
-              child: RaisedButton(
-                color: Colors.amber.shade100,
-                onPressed: () {},
-                child: const Text("My Button"),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
