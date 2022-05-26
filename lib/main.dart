@@ -19,8 +19,13 @@ class MyApp extends StatelessWidget {
             height: 200,
             padding: const EdgeInsets.all(3),
             // User internet image
-            child: Image.network(
-              "https://picsum.photos/200/300",
+            /*   child: Image.network(
+                  "https://picsum.photos/200/300",
+                  fit: BoxFit.cover,
+                ), */
+            // User local image
+            child: Image.asset(
+              "images/2022-02-05 (4).png",
               fit: BoxFit.cover,
             ),
           ),
