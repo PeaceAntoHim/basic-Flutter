@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,24 +10,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Excercise Image"),
+          title: const Text("Excercise Spacer"),
         ),
         body: Center(
-          child: Container(
-            color: Colors.black,
-            width: 200,
-            height: 200,
-            padding: const EdgeInsets.all(3),
-            // User internet image
-            /*   child: Image.network(
-                  "https://picsum.photos/200/300",
-                  fit: BoxFit.cover,
-                ), */
-            // User local image
-            child: Image.asset(
-              "images/2022-02-05 (4).png",
-              fit: BoxFit.cover,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              const Spacer(flex: 1),
+              Container(width: 80, height: 80, color: Colors.red),
+              const Spacer(flex: 2),
+              Container(width: 80, height: 80, color: Colors.green),
+              const Spacer(flex: 3),
+              Container(width: 80, height: 80, color: Colors.blue),
+              const Spacer(flex: 2),
+            ],
           ),
         ),
       ),
