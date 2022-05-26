@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,56 +10,121 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Flexible Layout"),
+          title: const Text("Excercise Stack and align"),
         ),
-        body: Column(
+        body: Stack(
           children: <Widget>[
-            Flexible(
-              flex: 1,
-              child: Row(
-                children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.all(5),
-                      color: Colors.red,
-                    ),
+            // background
+            Column(
+              children: <Widget>[
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: <Widget>[
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Container(
+                          color: Colors.black12,
+                        ),
+                      ),
+                    ],
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.all(5),
-                      color: Colors.green,
-                    ),
+                ),
+                Flexible(
+                  flex: 1,
+                  child: Row(
+                    children: <Widget>[
+                      Flexible(
+                        flex: 1,
+                        child: Container(color: Colors.black12),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Container(color: Colors.white),
+                      ),
+                    ],
                   ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      margin: const EdgeInsets.all(5),
-                      color: Colors.blue,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Flexible(
-              flex: 2,
-              child: Row(
-                children: <Widget>[
-                  Flexible(
-                    flex: 2,
-                    child: Container(
-                      margin: const EdgeInsets.all(5),
-                      color: Colors.red,
+            // listview with text
+            ListView(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
                     ),
-                  ),
-                  Flexible(
-                    flex: 1,
-                    child: Container(
-                      color: Colors.green,
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      child: const Text(
+                        "This is text, has on layer center from stack",
+                        style: TextStyle(fontSize: 30),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            // buttton in the center of bottom
+            Align(
+              alignment: const Alignment(0, 0.9),
+              child: RaisedButton(
+                color: Colors.amber.shade100,
+                onPressed: () {},
+                child: const Text("My Button"),
               ),
             ),
           ],
