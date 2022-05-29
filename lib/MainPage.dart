@@ -59,6 +59,70 @@ class MainPage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(
+                        20,
+                        50 + MediaQuery.of(context).size.height * 0.35,
+                        20,
+                        20,
+                      ),
+                      child: Center(
+                        child: Column(
+                          children: <Widget>[
+                            const Text(
+                              "Beautiful Sunset at Paddy Field",
+                              maxLines: 2,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Color(0xFFF56D5D), fontSize: 25),
+                            ),
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(0, 20, 0, 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const <Widget>[
+                                  Text(
+                                    "Posted on ",
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 12),
+                                  ),
+                                  Text(
+                                    "May 29 2022",
+                                    style: TextStyle(
+                                        color: Color(0xFFF56D5D), fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: const <Widget>[
+                                Spacer(flex: 10),
+                                //Icon
+                                Icon(Icons.thumb_up,
+                                    size: 18, color: Colors.grey),
+                                Spacer(flex: 1),
+                                //Text
+                                Text(
+                                  "100",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                Spacer(flex: 5),
+                                //Icon
+                                Icon(Icons.comment,
+                                    size: 18, color: Colors.grey),
+                                Spacer(flex: 1),
+                                //Text
+                                Text(
+                                  "80",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                Spacer(flex: 10),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
