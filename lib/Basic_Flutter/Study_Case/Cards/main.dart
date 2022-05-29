@@ -1,4 +1,4 @@
-import 'package:basic_flutter/MainPage.dart';
+import 'package:basic_flutter/Cards/MainPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
