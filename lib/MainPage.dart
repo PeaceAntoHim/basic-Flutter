@@ -28,7 +28,40 @@ class MainPage extends StatelessWidget {
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.8,
               height: MediaQuery.of(context).size.height * 0.7,
-              child: Card(),
+              child: Card(
+                elevation: 10,
+                child: Stack(
+                  children: <Widget>[
+                    Opacity(
+                      opacity: 0.7,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(4),
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                                "https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.35,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(4),
+                          topRight: Radius.circular(4),
+                        ),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              "https://cdn.pixabay.com/photo/2018/01/20/08/33/sunset-3094078_960_720.jpg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
