@@ -31,8 +31,8 @@ class MainPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: -getSmallDiameter(context) / 4,
-            top: -getSmallDiameter(context) / 4,
+            left: -getBigDiameter(context) / 4,
+            top: -getBigDiameter(context) / 4,
             child: Container(
               // ignore: sort_child_properties_last
               child: const Center(
@@ -170,8 +170,45 @@ class MainPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                      FloatingActionButton(
+                        elevation: 0,
+                        mini: true,
+                        child: Image.network(
+                          "https://www.facebook.com/images/fb_icon_325x325.png",
+                        ),
+                        onPressed: () {},
+                      ),
+                      FloatingActionButton(
+                        elevation: 0,
+                        mini: true,
+                        child: Image.network(
+                          "https://www.pngall.com/wp-content/uploads/2016/07/Twitter-High-Quality-PNG.png",
+                        ),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const <Widget>[
+                    Text(
+                      "Don't have an account? ",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "SIGN UP?",
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Color(0xFFFF4891),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
